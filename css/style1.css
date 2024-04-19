@@ -1,0 +1,52 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap'); */
+@import "./google-fonts.css";
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  cursor: none;
+}
+
+.text {
+  position: absolute;
+  font-size: 0.75em;
+  color: #0f0;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.25s;
+  animation: animateColor 5s linear infinite;
+}
+
+.text::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #0f0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.text span {
+  position: absolute;
+  top: -40px;
+  text-transform: uppercase;
+  font-weight: 400;
+  transform-origin: 0 40px;
+}
+
+body:hover .text {
+  opacity: 1;
+}
+
+@keyframes animateColor {
+  0% {
+    filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0) hue-rotate(0);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0)
+      hue-rotate(360deg);
+  }
+}
