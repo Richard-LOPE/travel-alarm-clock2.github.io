@@ -17,7 +17,7 @@ search.addEventListener("click", () => {
     .then((response) => response.json())
     .then((json) => {
       if (json.cod === "404") {
-        container.style.height = "60%";
+        container.style.height = "500px";
 
         weatherBox.style.display = "none";
         weatherDetails.style.display = "none";
@@ -74,6 +74,6 @@ search.addEventListener("click", () => {
       weatherBox.classList.add("fadeIn");
       weatherDetails.classList.add("fadeIn");
 
-      container.style.height = "68%";
+      container.style.height = "550px";
     });
 });
